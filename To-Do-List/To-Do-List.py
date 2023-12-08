@@ -29,9 +29,9 @@ frame = tk.Frame(root, bd=3, width=700, height=300, bg="#32405b")
 frame.pack(pady=(0, 0))
 
 listBox = tk.Listbox(frame,
-                     font=('arial', 20),
-                     width=27,
-                     height=16,
+                     font=('arial', 21),
+                     width=20,
+                     height=12,
                      bg="#32405b",
                      fg="white",
                      selectbackground="#5a95ff")
