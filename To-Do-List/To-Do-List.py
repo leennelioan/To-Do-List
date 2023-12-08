@@ -46,34 +46,10 @@ scrollbar.config(command=listBox.yview)
 
 # Functions
 def update_listbox():
+    global task
     clear_listbox()
     for task in tasks:
         listBox.insert("end", f"{task['Task']} [{task['Category']}]")
-
-
-# Save and Load buttons
-save_button = tk.Button(root, text="Save", command=lambda: save_tasks)
-save_button.pack(side="left", fill="both")
-
-load_button = tk.Button(root, text="Load", command=lambda: load_tasks)
-load_button.pack(side="left", fill="both")
-
-
-# Save function
-def save_tasks(event):
-    with open("tasks.json", 'w') as file:
-        json.dump(tasks, file)
-
-
-# Load function
-def load_tasks(event):
-    global tasks
-    try:
-        with open("tasks.json", 'r') as file:
-            tasks = json.load(file)
-        update_listbox()
-    except FileNotFoundError:
-        return "No saved tasks found"
 
 
 def clear_listbox():
