@@ -52,10 +52,10 @@ def update_listbox():
 
 
 # Save and Load buttons
-save_button = tk.Button(root, text="Save", bg="black", command=lambda: save_tasks)
+save_button = tk.Button(root, text="Save", command=lambda: save_tasks)
 save_button.pack(side="left", fill="both")
 
-load_button = tk.Button(root, text="Load", bg="black", command=lambda: load_tasks)
+load_button = tk.Button(root, text="Load", command=lambda: load_tasks)
 load_button.pack(side="left", fill="both")
 
 
@@ -265,8 +265,6 @@ def updated_input(selected_index):
     else:
         display_task["text"] = "Please enter a task"
         display_category["text"] = "Please enter a category"
-    entry_task.delete(0, "end")
-    entry_category.delete(0, "end")
 
 
 # Edit Icon
